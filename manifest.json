@@ -1,0 +1,23 @@
+{
+	"name": "GitHub Blame",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Fix Github blame 404s",
+	"homepage_url": "http://github.com/rmlewisuk/github-blame-404-chrome",
+	"icons": {
+		"16": "icons/icon16.png",
+		"48": "icons/icon48.png",
+		"128": "icons/icon128.png"
+	},
+	"permissions": [
+		"https://github.com/*/*/blame/*",
+		"storage"
+	],
+	"content_scripts": [{
+		"matches": [
+			"https://github.com/*/*/blame/*"
+		],
+		"js": ["background.js"],
+		"run_at": "document_end"
+	}]
+}
